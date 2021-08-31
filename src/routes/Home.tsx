@@ -5,17 +5,12 @@ import { useAppSelector, useAppDispatch } from '../app/hooks';
 
 
 function Home() {
-    const msg = useAppSelector(selectMessage)
+    // 建立 dispatch
     const dispatch = useAppDispatch()
+    // 取得儲存在 Store 的 message 資料
+    const msg = useAppSelector(selectMessage)
+    // 宣告頁面上有一個 message state 變數，並設定資料型態為string，初始值為''空
     const [message, setMessage] = useState<string>('')
-
-    const mapCulture = (val: any) => {
-        return (
-            <div key={val.title}>
-                <p>{val.title}</p>
-            </div>
-        )
-    }
 
     return (
         <div className="App">
@@ -23,6 +18,7 @@ function Home() {
                 <h1>Local State</h1>
                 <input
                     value={message}
+                    // 當更改 input 內容時，觸發 setMessage 方法去改變 message state
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setMessage(e.target.value) }} />
                 <p>
                     {message}
@@ -30,6 +26,7 @@ function Home() {
                 <h1>Store State</h1>
                 <input
                     value={msg}
+                    // 當更改 input 內容時，觸發 dispatch 方法去改變 store 中的 message 
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => { dispatch(save(e.target.value)) }} />
                 <p>
                     {msg}

@@ -32,14 +32,4 @@ export const { save } = counterSlice.actions;
 
 export const selectMessage = (state: RootState) => state.message.msg;
 
-// export const incrementIfOdd = (amount: number): AppThunk => (
-//   dispatch,
-//   getState
-// ) => {
-//   const currentValue = selectCount(getState());
-//   if (currentValue % 2 === 1) {
-//     dispatch(incrementByAmount(amount));
-//   }
-// };
-
 export default counterSlice.reducer;
