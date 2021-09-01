@@ -2,6 +2,7 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import messageReducer from '../models/message'
 import userReducer from '../models/user'
 
+// combine 所有 reducer，形成一個 root store
 export const store = configureStore({
   reducer: {
     message: messageReducer,
