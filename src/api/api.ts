@@ -1,14 +1,24 @@
 import axios, { AxiosResponse } from 'axios'
 
+// opendata
 const API_URL = 'https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=4'
 
-export function fetchPart(amount = 1) {
-    return new Promise<{ data: number }>((resolve) =>
-        setTimeout(() => resolve({ data: amount }), 500)
+const fakeUser = [{
+    name: 'weichin'
+},{
+    name: 'john'
+},{
+    name: 'carolyn'
+}]
+
+const fetchUser = async () => {
+    return new Promise<{ data: Array<User> }>((resolve) =>
+        setTimeout(() => resolve({ data: fakeUser }), 500)
     );
 }
 
-const fetchCulture = async (): Promise<AxiosResponse<Culture[]>> => {
+// Http get example
+const fetchCulture = async (): Promise<AxiosResponse> => {
     try {
         const culture = await axios.get(API_URL)
         return culture.data
@@ -18,4 +28,4 @@ const fetchCulture = async (): Promise<AxiosResponse<Culture[]>> => {
     }
 }
 
-export { fetchCulture }
+export { fetchCulture, fetchUser }

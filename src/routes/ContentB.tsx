@@ -5,11 +5,7 @@ import { useAppSelector, useAppDispatch } from '../app/hooks'
 
 
 function ContentB() {
-    // 建立 dispatch
-    const dispatch = useAppDispatch()
-
-    // 宣告頁面上有一個 message state 變數，並設定資料型態為string，初始值為''空
-    const [name, setName] = useState<string>('')
+    // 從 Content B 讀取 Content A 中設定的 name，並在頁面上顯示
 
     return (
         <div>

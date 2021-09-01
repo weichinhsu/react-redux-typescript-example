@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import messageReducer from '../models/message'
+import userReducer from '../models/user'
 
 export const store = configureStore({
   reducer: {
-    message: messageReducer
+    message: messageReducer,
+    user: userReducer
   },
 });
 

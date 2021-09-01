@@ -5,15 +5,16 @@ import { useAppSelector, useAppDispatch } from '../app/hooks'
 
 
 function ContentA() {
-    // 建立 dispatch
     const dispatch = useAppDispatch()
-
-    // 宣告頁面上有一個 message state 變數，並設定資料型態為string，初始值為''空
-    const [name, setName] = useState<string>('')
+    const [name, setName] = useState<string>('Redux')
 
     return (
         <div>
             <h2>Content A</h2>
+            <input
+                value={name}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setName(e.target.value) }} />
+            <p>{name}</p>
         </div>
     );
 }
