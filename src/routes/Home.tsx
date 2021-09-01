@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import { selectMessage, save } from '../models/message'
-import './App.css';
-import { useAppSelector, useAppDispatch } from '../app/hooks';
-
+import './App.css'
+import { useAppSelector, useAppDispatch } from '../app/hooks'
+import ContentA from './ContentA'
+import ContentB from './ContentB'
 
 function Home() {
     // 建立 dispatch
@@ -31,9 +32,13 @@ function Home() {
                 <p>
                     {msg}
                 </p>
+                <div className="content">
+                    <ContentA />
+                    <ContentB />
+                </div>
             </header>
         </div>
     );
 }
 
-export default Home;
+export default Home
